@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+#d1,#d2
+{
+	width:400px;
+	height:300px;
+	background-color:#FF0;
+	float:left;
+}
+</style>
+<script>
+h=300;
+function changeDiv()
+{	
+	if(h>=0)
+	{
+	//alert('ok');
+	//Chon doi tuong
+	var a=document.getElementById('d1');
+	//Thay doi thuoc tinh CSS cua doi tuong
+	//for(i=300;i>=0;i--)
+	//	a.style.height=i+'px';
+	
+	a.style.height=h+'px';
+	h--;
+	console.log(h);
+	setTimeout("changeDiv()",10);
+	}
+	
+
+}
+
+
+function timer()
+{
+	var a=document.getElementById('timer');
+	var d=new Date();
+	a.innerHTML=d.getHours()+':'+d.getMinutes()+':'+d.getSeconds();
+}
+
+//setTimeout("changeDiv()",10)
+//setInterval("changeDiv()",10);
+
+setInterval("timer()",1000);
+
+</script>
+</head>
+
+<body>
+<div id="d1"> The div 1</div>
+<div id="timer">20:30:55</div>
+
+<input onClick="changeDiv()" id="bt1" type="button" value="Click me">
+
+</body>
+</html>
